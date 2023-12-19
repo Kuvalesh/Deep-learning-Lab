@@ -1,7 +1,7 @@
 import numpy as np
 
 # McCulloch-Pitts Neuron
-def mcculloch_pitts_neuron(inputs, weights, threshold=0.5):
+def mcculloch_pitts_neuron(inputs, weights, threshold=1                                                    ):
     # Calculate the weighted sum
     weighted_sum = np.dot(inputs, weights)
 
@@ -11,7 +11,7 @@ def mcculloch_pitts_neuron(inputs, weights, threshold=0.5):
     return output
 
 # Training the McCulloch-Pitts Neuron for the OR problem
-def train_mcculloch_pitts_neuron(inputs, target_output, weights, threshold=0.5, learning_rate=0.2, epochs=4):
+def train_mcculloch_pitts_neuron(inputs, target_output, weights, threshold=1, learning_rate=0.2, epochs=8):
     for epoch in range(epochs):
         print(f"Epoch {epoch + 1}")
         for input_values, target in zip(inputs, target_output):
@@ -33,7 +33,7 @@ inputs = np.array([[1,1,1,1], [0, 1,0,0], [1,1,1, 0], [1,0,0,1]])
 target_output = np.array([1, 1, 0, 0])
 
 # Initial weights
-initial_weights = np.array([0.0, 0.0])
+initial_weights = np.array([0.0, 0.0,0.0,0.0])
 
 # Training the McCulloch-Pitts Neuron for 4 epochs with a threshold of 0.5 and learning rate of 0.2
-train_mcculloch_pitts_neuron(inputs, target_output, initial_weights, threshold=0.5, learning_rate=0.2, epochs=4)
+train_mcculloch_pitts_neuron(inputs, target_output, initial_weights, threshold=1, learning_rate=0.2, epochs=8)
